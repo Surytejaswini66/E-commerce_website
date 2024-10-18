@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import ProductCard from "./components/ProductCard";
+import AddToCartModal from "./components/AddToCartModal";
+import ThankYouPage from "./components/ThankYouPage";
+import "./App.css"; // Add CSS animations
+
+const products = [
+  /* mock data */
+];
 
 function App() {
+  const [cartModal, setCartModal] = useState(null);
+
+  const handleAddToCart = (product) => {
+    setCartModal(product);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="product-list">
+              {products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAddToCart={handleAddToCart}
+                />
+              ))}
+            </div>
+          }
+        />
+        <Route path="/thank-you" element={<ThankYouPage />} />
+      </Routes>
+
+      {cartModal && (
+        <AddToCartModal
+          product={cartModal}
+          onClose={() => setCartModal(null)}
+        />
+      )}
+    </Router>
   );
 }
 
