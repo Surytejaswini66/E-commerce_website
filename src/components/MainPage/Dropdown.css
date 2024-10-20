@@ -1,0 +1,65 @@
+.dropdown-container {
+  position: relative;
+  width: 58.83px;
+  height: 24px;
+  top: 72px;
+  left: 568px;
+  gap: 0px;
+  opacity: 1; /* Change opacity to 1 for visibility */
+}
+
+.selected-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.selected-option p {
+  margin: 0;
+  padding: 0;
+}
+
+.small-container {
+  width: 12.83px;
+  height: 6.5px;
+  display: flex;
+  gap: 0px;
+  color: rgba(0, 0, 0, 1);
+  margin-left: 5px; /* Space between "Tools" and small container */
+}
+
+.small-container p {
+  width: 29.78px;
+  height: 8.93px;
+  background: rgba(217, 217, 217, 1);
+  margin: 0; /* Remove default margin */
+}
+
+.small-container p:last-child {
+  width: 9.07px;
+  height: 9.07px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  opacity: 0; /* Change to 1 if you want it visible */
+  transform: rotate(45deg); /* Rotate for the last p element */
+}
+
+.options-container {
+  position: absolute;
+  background: white; /* Background for dropdown */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Border for dropdown */
+  z-index: 1; /* Ensure dropdown is above other elements */
+  display: none; /* Initially hide the dropdown */
+}
+
+.dropdown-container:hover .options-container {
+  display: block; /* Show dropdown on hover */
+}
+
+.option {
+  padding: 5px 10px; /* Space around options */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.option:hover {
+  background-color: rgba(243, 169, 57, 0.2); /* Background change on hover */
+}

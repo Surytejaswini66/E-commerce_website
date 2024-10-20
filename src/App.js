@@ -1,50 +1,57 @@
-// App.js
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import ProductCard from "./components/ProductCard";
-import AddToCartModal from "./components/AddToCartModal";
-import ThankYouPage from "./components/ThankYouPage";
-import "./App.css"; // Add CSS animations
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import Nav from "./components/MainPage/Nav";
+import Header from "./components/MainPage/Header";
+import Search from "./components/MainPage/Search";
+import Buttons from "./components/MainPage/Buttons";
+import PlantsList from "./components/MainPage/PlantsList";
+import PlantItems from "./components/MainPage/PlantItems";
+import PlantsFooter from "./components/MainPage/PlantsFooter";
+import Cart from "./components/MainPage/Cart"; // Assuming Cart component exists
 
-const products = [
-  /* mock data */
-];
-
-function App() {
-  const [cartModal, setCartModal] = useState(null);
-
-  const handleAddToCart = (product) => {
-    setCartModal(product);
-  };
+function Layout() {
+  const location = useLocation(); // Get the current route path
+  const isCartPage = location.pathname === "/cart"; // Check if the current path is "/cart"
 
   return (
-    <Router>
-      <Header />
+    <div className="App">
+      {/* Only show Nav and Header on non-cart pages */}
+      {!isCartPage && <Nav />}
+      {!isCartPage && <Header />}
+
       <Routes>
+        {/* Main Page */}
         <Route
           path="/"
           element={
-            <div className="product-list">
-              {products.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onAddToCart={handleAddToCart}
-                />
-              ))}
-            </div>
+            <>
+              <Search />
+              <Buttons />
+              <PlantsList />
+              <PlantItems />
+            </>
           }
         />
-        <Route path="/thank-you" element={<ThankYouPage />} />
+
+        {/* Cart Page */}
+        <Route path="/cart" element={<Cart />} />
       </Routes>
 
-      {cartModal && (
-        <AddToCartModal
-          product={cartModal}
-          onClose={() => setCartModal(null)}
-        />
-      )}
+      {/* Only show the footer on non-cart pages */}
+      {!isCartPage && <PlantsFooter />}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Layout />
     </Router>
   );
 }

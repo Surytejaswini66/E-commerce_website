@@ -1,0 +1,84 @@
+.buttons-container {
+  display: flex;
+  gap: 10px; /* Adjust gap between buttons if necessary */
+  margin-top: 50px; /* Adjust this based on positioning needs */
+}
+
+.plants-button {
+  width: 114px;
+  height: 37px;
+  background: rgba(22, 83, 21, 1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.plants-button:hover {
+  background: rgba(22, 83, 21, 0.8); /* Button hover effect */
+}
+
+.plants-button:active {
+  background: rgba(22, 83, 21, 1); /* Button click effect */
+}
+
+.plants-button span {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
+
+.pots-button {
+  width: 100px;
+  height: 37px;
+  font-size: 20px;
+  color: grey;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.pots-button:hover {
+  background: rgba(0, 0, 0, 0.5); /* Button hover effect */
+}
+
+.pots-button:active {
+  background: rgba(0, 0, 0, 0.3); /* Button click effect */
+}
+
+.pots-button span {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.6);
+}
+.description-text {
+  width: 1238px;
+  height: 99px;
+  margin-top: 20px; /* Adjust margin to position the paragraph */
+  font-family: "Poppins", "roboto";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  padding-left: 20px;
+  color: rgba(131, 131, 131, 1);
+}
+.nursery-heading {
+  width: 96px;
+  height: 36px; /* Adjust spacing between paragraph and heading */
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  padding-left: 20px;
+  line-height: 16px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}

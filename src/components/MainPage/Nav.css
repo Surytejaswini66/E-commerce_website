@@ -1,0 +1,47 @@
+/* src/components/Nav.css */
+
+nav {
+  width: 1440px;
+  height: 33px;
+  background-color: rgba(22, 83, 21, 1);
+  position: relative;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  background-color: rgba(22, 83, 21, 1);
+}
+
+.shipping-info {
+  width: 647px;
+  height: 17px;
+  top: 8px;
+  padding-left: 310px;
+  text-align: center;
+  opacity: 1; /* Assuming you meant to have opacity visible */
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  color: white;
+  text-align: center;
+  background-color: rgba(22, 83, 21, 1);
+}
+
+.contact-info {
+  width: 191px;
+  height: 17px;
+  top: 8px;
+  opacity: 1;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding-right: 100px;
+  line-height: 16.94px;
+  color: white;
+  background-color: rgba(22, 83, 21, 1);
+}
